@@ -28,7 +28,8 @@ ipq50xx_setup_interfaces()
 	yuncore,ax850)
 		ucidef_set_interfaces_lan_wan "lan" "wan"
 		;;
-	tplink,eap650-outdoor-v1)
+	tplink,eap650-outdoor-v1|\
+	tplink,festa-f65-outdoor-v1)
 		ucidef_set_interface_lan "lan" "dhcp"
 		;;
 	esac
@@ -42,7 +43,8 @@ ipq50xx_setup_macs()
 	local label_mac=""
 
 	case $board in
-	tplink,eap650-outdoor-v1)
+	tplink,eap650-outdoor-v1|\
+	tplink,festa-f65-outdoor-v1)
 		label_mac=$(get_mac_binary /tmp/factory_data/default-mac 0)
 		lan_mac=$label_mac
 		;;

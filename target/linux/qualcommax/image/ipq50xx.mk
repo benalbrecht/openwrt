@@ -183,6 +183,27 @@ define Device/tplink_eap650-outdoor-v1
 endef
 TARGET_DEVICES += tplink_eap650-outdoor-v1
 
+define Device/tplink_festa-f65-outdoor-v1
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := TP-Link
+	DEVICE_MODEL := Festa F65-Outdoor
+	DEVICE_VARIANT := v1
+	DEVICE_DTS_CONFIG := config@mp03.1
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	NAND_SIZE := 128m
+	SOC := ipq5018
+	# Reusing the EAP650-Outdoor BDF package as a starting point;
+	# replace with ipq-wifi-tplink_festa-f65-outdoor-v1 once a
+	# Festa-F65-Outdoor-specific BDF is upstreamed.
+	DEVICE_PACKAGES := ath11k-firmware-ipq5018 \
+		kmod-ath11k-pci \
+		ath11k-firmware-qcn9074 \
+		ipq-wifi-tplink_eap650-outdoor-v1
+endef
+TARGET_DEVICES += tplink_festa-f65-outdoor-v1
+
 define Device/xiaomi_ax6000
 	$(call Device/FitImage)
 	$(call Device/UbiFit)
