@@ -47,7 +47,8 @@ case "$FIRMWARE" in
 		ath11k_remove_regdomain
 		ath11k_set_macflag
 		;;
-	tplink,eap650-outdoor-v1)
+	tplink,eap650-outdoor-v1|\
+	tplink,festa-f65-outdoor-v1)
 		caldata_from_file "/tmp/factory_data/radio" 0 0x20000
 		label_mac=$(get_mac_binary /tmp/factory_data/default-mac 0)
 		ath11k_patch_mac $label_mac 0
@@ -140,7 +141,8 @@ case "$FIRMWARE" in
 		ath11k_remove_regdomain
 		ath11k_set_macflag
 		;;
-	tplink,eap650-outdoor-v1)
+	tplink,eap650-outdoor-v1|\
+	tplink,festa-f65-outdoor-v1)
 		caldata_from_file "/tmp/factory_data/radio1" 0 0x20000
 		label_mac=$(get_mac_binary /tmp/factory_data/default-mac 0)
 		ath11k_patch_mac $(macaddr_add $label_mac 1) 0

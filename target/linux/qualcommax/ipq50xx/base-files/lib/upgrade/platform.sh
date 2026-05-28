@@ -263,7 +263,8 @@ platform_do_upgrade() {
 		remove_oem_ubi_volume ubi_rootfs
 		nand_do_upgrade "$1"
 		;;
-	tplink,eap650-outdoor-v1)
+	tplink,eap650-outdoor-v1|\
+	tplink,festa-f65-outdoor-v1)
 		tplink_do_upgrade "$1"
 		;;
 	xiaomi,ax6000|\
