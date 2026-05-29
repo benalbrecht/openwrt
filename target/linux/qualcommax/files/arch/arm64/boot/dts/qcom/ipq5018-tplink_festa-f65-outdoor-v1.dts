@@ -63,8 +63,8 @@
 		led_system_green: led-0 {
 			function = LED_FUNCTION_STATUS;
 			color = <LED_COLOR_ID_GREEN>;
-            gpios = <&tlmm 24 GPIO_ACTIVE_HIGH>;
-            default-state = "keep";
+			gpios = <&tlmm 24 GPIO_ACTIVE_HIGH>;
+			default-state = "keep";
 		};
 	};
 };
