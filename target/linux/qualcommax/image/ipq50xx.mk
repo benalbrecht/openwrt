@@ -189,7 +189,7 @@ define Device/tplink_festa-f65-outdoor-v1
 	DEVICE_VENDOR := TP-Link
 	DEVICE_MODEL := Festa F65-Outdoor
 	DEVICE_VARIANT := v1
-	DEVICE_DTS_CONFIG := config@mp03.1
+	DEVICE_DTS_CONFIG := config@Festa_F65-Outdoor_1_0_0
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
 	NAND_SIZE := 128m
