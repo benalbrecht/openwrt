@@ -16,10 +16,10 @@
 	aliases {
 		label-mac-device = <&dp2>;
 
-		led-boot = &led_system_blue;
-		led-failsafe = &led_system_blue;
-		led-running = &led_system_blue;
-		led-upgrade = &led_system_blue;
+		led-boot = &led_system_green;
+		led-failsafe = &led_system_green;
+		led-running = &led_system_green;
+		led-upgrade = &led_system_green;
 
 		serial0 = &blsp1_uart1;
 	};
@@ -45,7 +45,7 @@
 		compatible = "gpio-leds";
 
 		/*
-		 * TODO: confirm the GPIO for the single blue status LED.
+		 * TODO: confirm the GPIO for the single green status LED.
 		 * The stock vendor DTS does not declare it; the LED is
 		 * driven from userspace on stock firmware. GPIO 31 (used
 		 * for the EAP650-Outdoor's green LED) is a starting guess.
@@ -60,10 +60,11 @@
 		 *     echo $n > /sys/class/gpio/unexport
 		 *   done
 		 */
-		led_system_blue: led-0 {
+		led_system_green: led-0 {
 			function = LED_FUNCTION_STATUS;
-			color = <LED_COLOR_ID_BLUE>;
-			gpios = <&tlmm 31 GPIO_ACTIVE_HIGH>;
+			color = <LED_COLOR_ID_GREEN>;
+            gpios = <&tlmm 24 GPIO_ACTIVE_HIGH>;
+            default-state = "keep";
 		};
 	};
 };
