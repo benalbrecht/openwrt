@@ -200,7 +200,7 @@ define Device/tplink_festa-f65-outdoor-v1
 	DEVICE_PACKAGES := ath11k-firmware-ipq5018 \
 		kmod-ath11k-pci \
 		ath11k-firmware-qcn9074 \
-		ipq-wifi-tplink_eap650-outdoor-v1
+		ipq-wifi-tplink_festa-f65-outdoor-v1
 endef
 TARGET_DEVICES += tplink_festa-f65-outdoor-v1
 
