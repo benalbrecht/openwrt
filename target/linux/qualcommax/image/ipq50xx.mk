@@ -194,13 +194,12 @@ define Device/tplink_festa-f65-outdoor-v1
 	PAGESIZE := 2048
 	NAND_SIZE := 128m
 	SOC := ipq5018
-	# Reusing the EAP650-Outdoor BDF package as a starting point;
-	# replace with ipq-wifi-tplink_festa-f65-outdoor-v1 once a
-	# Festa-F65-Outdoor-specific BDF is upstreamed.
+	# Reuses EAP650-Outdoor reference BDF (firmware_qca-wireless PR #134);
+	# factory per-device cal comes from /tmp/factory_data/radio + radio1.
 	DEVICE_PACKAGES := ath11k-firmware-ipq5018 \
 		kmod-ath11k-pci \
 		ath11k-firmware-qcn9074 \
-		ipq-wifi-tplink_festa-f65-outdoor-v1
+		ipq-wifi-tplink_eap650-outdoor-v1
 endef
 TARGET_DEVICES += tplink_festa-f65-outdoor-v1
 
